@@ -3,6 +3,7 @@ import { navItems } from '../../data/navItems.ts';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { useEffect, useState } from 'react';
 import Modal from '../Modal/Modal.tsx';
+import ScrambleText from '../Scramble/Scramble.tsx';
 
 export default function Header() {
     const [mounted, setMounted] = useState(false);
@@ -36,7 +37,7 @@ export default function Header() {
                                     href={item.href}
                                     className={styles.navEl}
                                 >
-                                    {item.label}
+                                    <ScrambleText text={item.label} />
                                 </a>
                             </li>
                         ))}
