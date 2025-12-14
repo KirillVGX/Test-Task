@@ -2,25 +2,42 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+
     position: sticky;
-    width: calc(100% - var(--padding-inline)*2);
-    top: 40px;
+    width: calc(100% - var(--padding-inline) * 2);
+    top: 15px;
     left: 80px;
     margin-top: var(--padding-block);
     margin-left: var(--padding-inline);
+
     z-index: 10;
+    opacity: 0;
+    transform: translateY(-12px);
+    transition: all 0.4s ease;
 }
 
 .logoImg {
     max-width: 156px;
     height: auto;
+    cursor: pointer;
 }
+
+/* Navigation */
 
 .navMenu {
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 40px;
+}
+
+.navItem {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: all 0.3s ease;
+    height: 48px;
+    padding: 10px 5px 20px 5px;
+    cursor: pointer;
 }
 
 .navEl {
@@ -34,8 +51,87 @@
     transition: all 0.3s ease;
 }
 
-.navEl:hover {
+/* Burger Button */
+
+.burgerBtn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    max-width: 48px;
+    max-height: 48px;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.burgerIcon {
+    width: 60%;
+    height: 60%;
+}
+
+/* Modal */
+
+.modalNav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modalNav a {
+    font-size: 24px;
+}
+
+/* Animations */
+
+.header.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header.show .navItem {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navItem:hover {
+    background-color: rgb(44, 43, 44);
+    border-radius: 5px;
+}
+
+.navItem:hover .navEl {
     color: hsla(0, 0%, 100%, 1);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3),
         0 0 10px rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* Adaptive */
+
+@media (max-width: 1200px) {
+    :root {
+        --padding-block: 30px;
+        --padding-inline: 25px;
+    }
+
+    .header {
+        left: 0px;
+        gap: 20px;
+    }
+
+    .navMenu {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navItem {
+        max-height: 20px;
+        padding: 0;
+    }
 }

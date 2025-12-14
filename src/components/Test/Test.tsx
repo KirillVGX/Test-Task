@@ -1,8 +1,14 @@
 import styles from './test.module.css';
+import { useInView } from '../../hooks/useInView';
 
 export default function Test() {
+    const { ref, isVisible } = useInView();
+
     return (
-        <section className={styles.test}>
+        <section
+            ref={ref}
+            className={`${styles.test} ${isVisible ? styles.show : ''}`}
+        >
             <p className={styles.text}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

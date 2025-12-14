@@ -1,12 +1,13 @@
 .heroSection {
-    padding: 80px;
-    color: white;
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: calc(100vh - 80px);
     justify-content: flex-end;
+    
+    padding: 80px;
+    color: white;
+    height: calc(960px - 80px);
+    position: relative;
     z-index: 1;
 }
 
@@ -22,9 +23,12 @@
     pointer-events: none;
 }
 
+/* Start Button */
+
 .buttonWrapper {
     position: relative;
     z-index: 5;
+    transition: all 0.3s ease-in-out;
 }
 
 .hrTop {
@@ -56,9 +60,10 @@
     cursor: pointer;
     z-index: 6;
     position: relative;
-    
+
     background-color: hsla(0, 0%, 100%, 0.1);
     backdrop-filter: blur(1px);
+    transition: all 0.3s ease-in-out;
 
     border-image: linear-gradient(
             90.34deg,
@@ -67,7 +72,7 @@
             rgba(255, 255, 255, 0.2) 100%
         )
         1;
-    
+
     clip-path: polygon(
         20px 0,
         100% 0,
@@ -102,6 +107,8 @@
     color: transparent;
 }
 
+/* Another */
+
 .title {
     font-family: 'NeueMontreal';
     font-weight: 200;
@@ -133,4 +140,54 @@
 .navigationBtnIcon {
     max-width: 15px;
     max-height: 15px;
+}
+
+/* Animation */
+
+.canvas,
+.buttonWrapper,
+.title,
+.navigationBtn {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.buttonWrapper:hover {
+    transform: scale(1.1);
+}
+
+.buttonWrapper:hover .btn {
+    backdrop-filter: blur(3px);
+}
+
+/* Adaptive */
+
+@media (max-width: 768px) {
+    .heroSection {
+        height: 550px;
+        padding: 25px;
+    }
+
+    .buttonWrapper {
+        order: 1;
+        margin-top: 16px;
+    }
+
+    .btn {
+        padding-inline: 64px;
+    }
+
+    .navigationBtn {
+        order: 1;
+    }
+
+    .title {
+        font-size: 60px;
+    }
 }

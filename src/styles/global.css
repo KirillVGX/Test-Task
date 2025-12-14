@@ -1,5 +1,5 @@
 :root {
-    --padding-block: 70px;
+    --padding-block: 40px;
     --padding-inline: 80px;
 }
 
@@ -11,4 +11,11 @@
 
 body {
     background-color: hsla(260, 8%, 7%, 1);
+}
+
+@media (max-width: var(--width-tablet)) {
+    :root {
+        --padding-block: 50px;
+        --padding-inline: 60px;
+    }
 }
