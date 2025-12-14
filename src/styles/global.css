@@ -1,0 +1,14 @@
+:root {
+    --padding-block: 70px;
+    --padding-inline: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsla(260, 8%, 7%, 1);
+}

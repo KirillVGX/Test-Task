@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: sticky;
+    width: calc(100% - var(--padding-inline)*2);
+    top: 40px;
+    left: 80px;
+    margin-top: var(--padding-block);
+    margin-left: var(--padding-inline);
+    z-index: 10;
+}
+
+.logoImg {
+    max-width: 156px;
+    height: auto;
+}
+
+.navMenu {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.navEl {
+    font-family: 'NeueMontreal';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: hsla(0, 0%, 100%, 0.6);
+    transition: all 0.3s ease;
+}
+
+.navEl:hover {
+    color: hsla(0, 0%, 100%, 1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3),
+        0 0 10px rgba(255, 255, 255, 0.4);
+}
