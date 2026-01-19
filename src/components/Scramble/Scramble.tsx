@@ -20,7 +20,10 @@ export default function ScrambleText({ text }: Props) {
                 .split('')
                 .map((char, i) => {
                     if (i < iteration) return char;
-                    if (i === Math.floor(iteration) || i === Math.floor(iteration) + 2) {
+                    if (
+                        i === Math.floor(iteration) ||
+                        i === Math.floor(iteration) + 2
+                    ) {
                         return CHARS[Math.floor(Math.random() * CHARS.length)];
                     }
                     return char;
